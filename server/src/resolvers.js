@@ -2,13 +2,14 @@ const resolvers = {
   Query: {
     tracksForHome: (_, __, {dataSources}) => {
       return dataSources.trackAPI.getTracksForHome();
-    }, 
+    }
+  },
     Track: {
-      author: ({authorID}, _, {dataSources}) => {
-        return dataSources.trackAPI.getAuthor(authorID);
+      author: ({authorId}, _, {dataSources}) => {
+        return dataSources.trackAPI.getAuthor(authorId);
       }
     }
-  }
+
 };
 
 module.export = resolvers;
